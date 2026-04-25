@@ -1,4 +1,4 @@
-﻿# C5 Marauder Dongle GPS Test
+﻿# C5 Marauder Dongle 
 
 Split firmware files for the ESP32 T-Dongle C5 Marauder GPS test build.
 
