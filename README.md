@@ -1,6 +1,6 @@
 # C5 Marauder Dongle
 
-Polished split firmware files for the ESP32 T-Dongle C5 Marauder build tested on April 26, 2026.
+Cleaned-up split firmware files for the ESP32 T-Dongle C5 Marauder build tested on April 27, 2026.
 
 ## Files
 
@@ -19,6 +19,9 @@ Polished split firmware files for the ESP32 T-Dongle C5 Marauder build tested on
 ## Confirmed on-device
 
 - SD mount, browse, and delete working
+- Evil Portal HTML file picker reads .html files from the SD root
+- One-button Join WiFi password entry working on the T-Dongle C5
+- Join WiFi now saves credentials before connecting so Join Saved WiFi can recover after a reset
 - Bluetooth attack status screens working
 - Wi-Fi attack status screens working
 - Bluetooth Analyzer and WiFi Channel Analyzer working
