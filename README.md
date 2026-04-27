@@ -1,8 +1,8 @@
 # C5 Marauder Dongle
 
-Polished split firmware files for the ESP32 T-Dongle C5 Marauder build tested on April 26, 2026.
+Boot-safe split firmware files for the ESP32 T-Dongle C5 Marauder build tested on April 27, 2026.
 
-This is the pre-keyboard and pre-Evil-Portal-change snapshot restored from the stable build preserved before the April 27, 2026 WiFi join and Evil Portal work.
+This repo now tracks the current boot-safe C5 build that replaces the older SPIFFS-based snapshot. The C5 settings path was moved to NVS/Preferences so the dongle boots cleanly after a full erase and still keeps settings across reboot.
 
 ## Files
 
@@ -20,18 +20,23 @@ This is the pre-keyboard and pre-Evil-Portal-change snapshot restored from the s
 
 ## Confirmed on-device
 
+- Clean boot on the T-Dongle C5 after erase and reflash
+- Settings persistence working through reboot
 - SD mount, browse, and delete working
+- Bluetooth sniffers and analyzer working
 - Bluetooth attack status screens working
 - Wi-Fi attack status screens working
-- Bluetooth Analyzer and WiFi Channel Analyzer working
-- Probe Request screen working
-- Detect Pineapple, Detect Pwnagotchi, and Detect MultiSSID status screens working
+- Probe Request and Beacon Sniff working
+- Deauth Sniff working
+- Channel Analyzer and Channel Summary working
+- Signal Monitor usable
+- Scan AP and Scan AP/STA working
 - Card Skimmer Detect display working
 - GPS NMEA communication active
-- WiFi Wardrive counters and satellite display working
 
-## Known issue
+## Known issues
 
+- Probe Request, Beacon Sniff, and Packet Monitor still have some top-line background bleed on the C5 UI
 - BLE Wardrive counter still needs investigation
 
 ## ESP Flash Download Tool
