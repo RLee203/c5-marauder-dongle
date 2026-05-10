@@ -10,6 +10,7 @@ This repo now tracks the current boot-safe C5 build that replaces the older SPIF
 - partitions.bin
 - boot_app0.bin
 - firmware.bin
+- merged.bin *(all four files combined into a single binary, flash to offset 0x0)*
 
 ## Confirmed flash offsets
 
@@ -43,7 +44,7 @@ This repo now tracks the current boot-safe C5 build that replaces the older SPIF
 
 Use chip type `ESP32-C5` and add the four files above with the exact offsets shown.
 
-## esptool example
+## esptool example (split files)
 
 ```text
 esptool.py --chip esp32c5 --port COM17 --baud 921600 write_flash -z \
@@ -51,6 +52,14 @@ esptool.py --chip esp32c5 --port COM17 --baud 921600 write_flash -z \
   0x8000 partitions.bin \
   0xE000 boot_app0.bin \
   0x10000 firmware.bin
+```
+
+## esptool example (merged binary)
+
+Flash the entire firmware in one command using the pre-merged binary:
+
+```text
+esptool.py --chip esp32c5 --port COM17 --baud 921600 write_flash 0x0 merged.bin
 ```
 
 ## Notes
